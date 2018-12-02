@@ -27,23 +27,3 @@ class Nothing(Maybe):
 
     def unwrap(self):
         return self.val
-
-
-if __name__ == "__main__":
-
-    def a(data):
-        data["a"] = 1
-        return data
-
-    def b(data):
-        data["a"] += 1
-        return data
-
-    def c(data):
-        data["c"] = "hey"
-        return data
-
-    result = Just({}).do(a).do(b).unwrap()
-    print("result", result)
-    result = Just({}).do(b).do(c).unwrap()
-    print("result", result)
